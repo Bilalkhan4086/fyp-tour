@@ -87,7 +87,7 @@ marginLeft:"0px"
         <Box sx={styles.smallBox1}/>
      <Box sx={styles.textBox1}>Green is the prime color of the world</Box>
      <Box sx={styles.textBox2}>The Beauty of <br/>Nature</Box>
-     <Button sx={styles.boxButton} variant="primary">Explore More...</Button>
+     <Button sx={styles.boxButton} variant="primary">EXPLORE MORE</Button>
      <Box sx={styles.smallBox2}/>
     </Box>
     </Box>
