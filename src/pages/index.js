@@ -12,11 +12,12 @@ import { Box } from "theme-ui"
 export default function Home() {
   return (
   <Box>
+    <Navbar/>
     <Hero/>
     <Stories/> 
     <SixStroies/>
     <CurrentProject/>
-    {/* <SaveTheWorld/> */}
+    <SaveTheWorld/>
     <SaveTheWorld2/>
     <Footer/>
   </Box>)
