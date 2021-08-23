@@ -17,7 +17,7 @@ export default function Home() {
     <Stories/> 
     <SixStroies/>
     <CurrentProject/>
-    <SaveTheWorld/>
+    {/* <SaveTheWorld/> */}
     <SaveTheWorld2/>
     <Footer/>
   </Box>)

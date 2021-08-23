@@ -28,7 +28,7 @@ class Navbar extends Component {
                                 )
                     })}
                 </ul>
-                <Button>Start business</Button>
+                <Button>Start Business</Button>
             </nav>
         )
     }

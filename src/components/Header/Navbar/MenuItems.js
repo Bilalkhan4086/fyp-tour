@@ -1,26 +1,26 @@
 export const MenuItems=[
     {
-    title: "blog",
+    title: "Book Trip",
     url:'#',
     cName:'nav-links'
     },
     {
-    title: "book trip",
+    title: "Book Hotel",
     url:'#',
     cName:'nav-links'
     },
     {
-    title: "book hotel",
+    title: "Blog",
     url:'#',
     cName:'nav-links'
     },
     {
-        title: "log in",
+        title: "Login",
         url:'#',
         cName:'nav-links'
         },
         {
-            title: 'start business',
+            title: 'Start Business',
             url: '#',
             cName:'nav-links-mobile'
         },
