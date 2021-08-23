@@ -1,7 +1,5 @@
 import React from 'react'
-import { Box, Button, Heading, Image, Text, Link } from 'theme-ui';
-import CurrentProjectCard from '../CurrentProjectCard/CurrentProjectCard';
-import forestImage from '../../Images/KalashValley.jpg'
+import { Box, Heading, Image, Text, Link } from 'theme-ui';
 import forestImage1 from '../../Images/cloudMountain.jpg'
 import forestImage2 from '../../Images/Nature3.jpg'
 import forestImage3 from '../../Images/Nature.jpg'
@@ -45,7 +43,8 @@ const SaveTheWorld = () => {
         },
         headingThird: {
             width: "350px",
-            fontSize: ["2rem",'2.2rem','2.2rem']
+            fontSize: ["2rem",'2.2rem','2.2rem'],
+            fontWeigth:"lighter"
         },
         SaveTheWorldBox: {
             display: "flex",
@@ -96,8 +95,8 @@ const SaveTheWorld = () => {
                 height: "616px",
             },
             '@media screen and (min-width: 1200px)': {
-                width: "703px",
-                height: "600px",
+                width: "603px",
+                height: "500px",
             }
         },
         MainSecondBox: {
@@ -185,7 +184,8 @@ const SaveTheWorld = () => {
         }, ImagedTextBoxHeader: {
             fontSize: "2.4rem",
             fontFamily: "Merriweather",
-            marginY: "1.2rem"
+            marginY: "1.2rem",
+            fontWeight:"lighter"
         }, ImagedTextBoxLink: {
             width: "6.4rem",
             borderBottom: "2px solid #fff",
@@ -249,21 +249,25 @@ const SaveTheWorld = () => {
                         </Box>
                     </Box>
 
+{/* Problem in styling during building from here */}
+
+
                     <Box sx={styles.MainSecondBox}>
 
                         <Box sx={styles.ImagedTextBox}>
-                            <Heading as="body" sx={styles.ImagedTextBoxHeader}>The air smells sweeter</Heading><br />
+                            <Heading as="h3" sx={styles.ImagedTextBoxHeader}>The air smells sweeter</Heading><br />
                             <Text sx={styles.ImagedTextBoxText}>Whether you call it nature travel, sustainable travel or responsible ecotourism, there’s something incredibly potent, powerful, and cleansing about getting away from the hustle and bustle of the city. </Text><br />
                             <Link href="#!" sx={styles.ImagedTextBoxLink}>read more</Link>
                         </Box>
 
                         <Box sx={styles.SecondTextBox}>
-                            <Heading as="body" sx={styles.headingThird}>With Earth Day</Heading>
+                            <Heading as="h3" sx={styles.headingThird}>With Earth Day</Heading>
                             <br />
                             <Text sx={{ fontSize: "1.1rem" }} >With Earth Day coming up April 22, people tend to start thinking and talking about nature conservation more and more at this time of year.</Text>
                         </Box>
 
                     </Box>
+{/* Problem in styling during building to here*/}
 
 
                 </Box>
