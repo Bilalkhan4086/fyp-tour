@@ -2,7 +2,7 @@ import React from "react"
 import Hero from '../components/Hero/Hero'
 import SixStroies from "../components/SixStories/SixStroies"
 import Stories from "../components/Stories/Stories"
-import Navbar from "../components/Header/Navbar/Navbar"
+import {NavBar} from "../components/Header/Navbar"
 import CurrentProject from "../components/CurrentProjects/CurrentProjects"
 import SaveTheWorld from "../components/SaveTheWorld/SaveTheWorld"
 import SaveTheWorld2 from "../components/SaveTheWorld2/SaveTheWorld2"
@@ -11,9 +11,9 @@ import { Box } from "theme-ui"
 
 export default function Home() {
   return (
-  <Box>
-    <Navbar/>
-    <Hero/>
+  <Box style={{width:"100%"}}>
+    <NavBar />
+    <Hero />
     <Stories/> 
     <SixStroies/>
     <CurrentProject/>

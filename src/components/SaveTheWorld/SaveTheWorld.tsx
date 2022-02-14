@@ -79,7 +79,8 @@ const SaveTheWorld = () => {
             overflow: "hidden",
             '@media (max-width: 574px)': {
                 width: "90%",
-                marginX: "auto"
+                marginX: "auto",
+                marginTop:"70px"
             },
             '@media (min-width: 575px) and (max-width: 769px)': {
                 width: "550px",
