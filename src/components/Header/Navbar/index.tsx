@@ -39,7 +39,7 @@ export const NavBar = () =>{
       <Nav.Link style={navEx ? {marginTop:"10%"} : {marginTop:"0px"}} eventKey={2} onClick={()=>{setShowModal(true)}}>
         <Box style={{textAlign:"center"}}>
         <Box>
-        <Avatar style={{marginTop : navEx ? "-70px":"-10px",width: navEx ? "100px":"45px"}} title="login" src={login}/>
+        <Avatar style={{marginTop : navEx ? "-30px":"-10px",width: navEx ? "100px":"45px"}} title="login" src={login}/>
         </Box>
         <Box>
         <Text style={{fontSize:navEx ? "1.5rem" : "0.75rem"}}>SignIn / SignUP</Text>
