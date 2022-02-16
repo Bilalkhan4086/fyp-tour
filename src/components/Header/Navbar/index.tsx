@@ -11,6 +11,7 @@ export const NavBar = () =>{
   const [navEx,setNavEx] = useState(false);
   const [sellerMode,setSellerMode] = useState(false);
   const [showModal,setShowModal] = useState(false);
+  const [Name,setName] = useState("Muhammad Bilal");
 
 
 
@@ -35,14 +36,18 @@ export const NavBar = () =>{
     </Nav>
     <Divider/>
     <Nav >
-      <Nav.Link href="#BecomeASeller" style={{display:"flex",justifyContent:"center",margin:"auto"}} ><Button style={{borderRadius:"50px",backgroundColor:"green",height:"50px",color:"whitesmoke",fontWeight:'bold'}} onClick={()=>{setSellerMode(!sellerMode)}}>{sellerMode ? "Back to Buyer" : 'Become a seller'}</Button></Nav.Link>
+      <Nav.Link href="#BecomeASeller" style={{display:"flex",justifyContent:"center",margin:"auto"}} >
+      <Button style={{borderRadius:"50px",backgroundColor:"green",height:"50px",color:"whitesmoke",fontWeight:'bold'}}>
+            {sellerMode ? "Back to Buyer" : 'Become a seller'}
+      </Button>
+      </Nav.Link>
       <Nav.Link style={navEx ? {marginTop:"10%"} : {marginTop:"0px"}} eventKey={2} onClick={()=>{setShowModal(true)}}>
         <Box style={{textAlign:"center",marginTop:"15px"}}>
         <Box>
-        <Avatar style={{marginTop : navEx ? "-70px":"-10px",width: navEx ? "80px":"45px"}} title="login" src={login}/>
+        <Avatar style={{marginTop : navEx ? "-50px":"-10px",width: navEx ? "80px":"45px"}} title="login" src={login}/>
         </Box>
-        <Box style={{marginTop : navEx ? "0px":"-10px"}}>
-        <Text style={{fontSize:navEx ? "1.25rem" : "0.75rem"}}>SignIn / SignUP</Text>
+        <Box style={{marginTop : navEx ? "0px":"-5px"}}>
+        <Text style={{fontSize:navEx ? "1.25rem" : "0.75rem",color:"green"}}>{(!!Name ? Name:'SignIn/SignUp').toUpperCase()}</Text>
         <MyVerticallyCenteredModalSignUp
         show={showModal}
         onHide={()=>{
