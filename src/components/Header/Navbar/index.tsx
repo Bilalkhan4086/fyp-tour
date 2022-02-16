@@ -37,12 +37,12 @@ export const NavBar = () =>{
     <Nav >
       <Nav.Link href="#BecomeASeller" style={{display:"flex",justifyContent:"center",margin:"auto"}} ><Button style={{borderRadius:"50px",backgroundColor:"green",height:"50px",color:"whitesmoke",fontWeight:'bold'}} onClick={()=>{setSellerMode(!sellerMode)}}>{sellerMode ? "Back to Buyer" : 'Become a seller'}</Button></Nav.Link>
       <Nav.Link style={navEx ? {marginTop:"10%"} : {marginTop:"0px"}} eventKey={2} onClick={()=>{setShowModal(true)}}>
-        <Box style={{textAlign:"center"}}>
+        <Box style={{textAlign:"center",marginTop:"15px"}}>
         <Box>
-        <Avatar style={{marginTop : navEx ? "-30px":"-10px",width: navEx ? "100px":"45px"}} title="login" src={login}/>
+        <Avatar style={{marginTop : navEx ? "-70px":"-10px",width: navEx ? "80px":"45px"}} title="login" src={login}/>
         </Box>
-        <Box>
-        <Text style={{fontSize:navEx ? "1.5rem" : "0.75rem"}}>SignIn / SignUP</Text>
+        <Box style={{marginTop : navEx ? "0px":"-10px"}}>
+        <Text style={{fontSize:navEx ? "1.25rem" : "0.75rem"}}>SignIn / SignUP</Text>
         <MyVerticallyCenteredModalSignUp
         show={showModal}
         onHide={()=>{
