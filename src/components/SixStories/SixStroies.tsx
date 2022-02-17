@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Grid } from 'theme-ui'
 import Paper from '../Papers/Paper'
-import CloudMountain from '../../Images/cloudMountain2.jpg';
+// import CloudMountain from '../../Images/cloudMountain2.jpg';
 const SixStroies = () => {
 
 const Data = [
@@ -15,23 +15,23 @@ const Data = [
 ]
     const styles = {
         mainBox:{
-            backgroundImage:`url(${CloudMountain})`,
+            backgroundImage:`url(https://www.alpsinsight.com/wp-content/uploads/2017/03/17SK0469.jpg)`,
             backgroundSize:"cover",
             backgroundPosition:"center",
             backgroundRepeat:"no-repeat",
-            marginY:"5%" 
+            width:"100%",
+            marginY:"3%",
+            paddingY:"3%"
         }
     }
     return (
        <Box sx={styles.mainBox}>
-            <Box sx={{width:"100%"}}>
-            <Grid gap={2} width={360}>
+            <Box style={{display:"flex",flexWrap:"wrap",justifyContent:"center"}}>
 {
     Data.map((data,i)=>{
         return(<Paper key={i} number={i+1} heading={data.heading} text={data.text}/>)
     })
 }
-        </Grid>
             </Box>
        </Box>
     )

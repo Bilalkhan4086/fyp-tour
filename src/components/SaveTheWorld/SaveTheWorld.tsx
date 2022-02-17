@@ -22,13 +22,16 @@ const SaveTheWorld = () => {
             width: "25vh",
             borderBottom: "2px solid #08d019",
             marginY: "2vh",
-            marginX: "auto"
+            marginX: "auto",
+            '@media (max-width: 220px)': {
+                width: "90%",
+            },
         },
         secondHeading: {
             textAlign: "center",
             fontFamily: "Merriweather",
             marginX: "auto",
-            '@media (max-width: 720px)': {
+            '@media (min-width: 301px) and (max-width: 720px)': {
                 width: "90%",
                 fonstSize: "1.6rem"
             },
@@ -42,9 +45,12 @@ const SaveTheWorld = () => {
             }
         },
         headingThird: {
-            width: "350px",
-            fontSize: ["2rem",'2.2rem','2.2rem'],
-            fontWeigth:"lighter"
+            width: "100%",
+            fontSize: "2.2rem",
+            fontWeigth:"lighter",
+            '@media (max-width: 350px)': {
+                fontSize:"1.4rem"
+            }
         },
         SaveTheWorldBox: {
             display: "flex",
@@ -78,9 +84,8 @@ const SaveTheWorld = () => {
         firstSmallImageBox: {
             overflow: "hidden",
             '@media (max-width: 574px)': {
-                width: "90%",
-                marginX: "auto",
-                marginTop:"70px"
+            display:"none",
+            marginTop:"10px" 
             },
             '@media (min-width: 575px) and (max-width: 769px)': {
                 width: "550px",
@@ -131,7 +136,14 @@ const SaveTheWorld = () => {
             backgroundPosition: "center",
             backgroundSize: "cover",
             color: "#fff",
-            '@media (max-width: 574px)': {
+            '@media (max-width: 300px)': {
+                width: "100%",
+                marginX: "auto",
+                marginTop:"30px",
+                padding:"5px",
+                paddingBottom:"20px"
+            },
+            '@media (min-width: 301px) and (max-width: 574px)': {
                 width: "90%",
                 marginX: "auto",
                 marginTop:"30px"
@@ -163,11 +175,19 @@ const SaveTheWorld = () => {
             padding: "70px 20px",
 
 
-            '@media (max-width: 574px)': {
+            '@media (max-width: 349px)': {
                 width: "90%",
                 marginX: "auto",
-                marginTop:"30px"
+                marginTop:"30px",
+                height: "430px"
             },
+            '@media (min-width: 350px) and (max-width: 574px)': {
+                width: "80%",
+                marginX: "auto",
+                marginTop:"30px",
+                height: "400px"
+
+            }, 
             '@media (min-width: 575px) and (max-width: 769px)': {
                 width: "526px",
                 marginX: "auto",
@@ -186,7 +206,10 @@ const SaveTheWorld = () => {
             fontSize: "2.4rem",
             fontFamily: "Merriweather",
             marginY: "1.2rem",
-            fontWeight:"lighter"
+            fontWeight:"lighter",
+            '@media (max-width: 250px)': {
+                fontSize: "2rem",
+            }
         }, ImagedTextBoxLink: {
             width: "6.4rem",
             borderBottom: "2px solid #fff",
@@ -199,7 +222,12 @@ const SaveTheWorld = () => {
             fontSize: "1.1rem"
         },
         firstTextDivHeading: {
-            '@media (max-width: 574px)': {
+            '@media (max-width: 298px)': {
+                width: "90%",
+                fontSize: "20px",
+                marginX: "auto"
+            },
+            '@media (min-width: 299px) and (max-width: 574px)': {
                 width: "90%",
                 fontSize: "30px",
                 marginX: "auto"
@@ -220,6 +248,11 @@ const SaveTheWorld = () => {
             '@media screen and (min-width: 1200px)': {
                 width: "350px",
                 fontSize: "30px"
+            }
+        },
+        saveTheWorldSimpleText:{
+            '@media (max-width: 220px)': {
+                fontSize: "0.75rem"
             }
         }
 
@@ -264,10 +297,10 @@ const SaveTheWorld = () => {
                         <Box sx={styles.SecondTextBox}>
                             <Heading as="h3" sx={styles.headingThird}>With Earth Day</Heading>
                             <br />
-                            <Text sx={{ fontSize: "1.1rem" }} >With Earth Day coming up April 22, people tend to start thinking and talking about nature conservation more and more at this time of year.</Text>
+                            <Text sx={styles.saveTheWorldSimpleText} >With Earth Day coming up April 22, people tend to start thinking and talking about nature conservation more and more at this time of year.</Text>
                         </Box>
 
-                    </Box>
+                    </Box> 
 {/* Problem in styling during building to here*/}
 
 

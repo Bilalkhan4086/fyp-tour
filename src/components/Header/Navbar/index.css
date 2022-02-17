@@ -1,0 +1,9 @@
+#navTextColor{
+    color: whitesmoke;
+    font-weight: bold;
+}
+.navbar-dark{
+    outline: none;
+    box-shadow: none;
+   
+}

@@ -18,7 +18,7 @@ const CurrentProjectCard = ({images,text}:propsType) => {
             padding:"1%",            
             marginX: "auto",
             '@media (max-width: 350px)': {
-                width: "240px",
+                width: "100%",
                 height: "330px"
              },
             '@media (min-width: 350px) and (max-width: 419px)': {

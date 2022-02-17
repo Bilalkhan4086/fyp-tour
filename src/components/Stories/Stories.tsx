@@ -247,7 +247,7 @@ const Stories = () => {
             </Box>
             <Box sx={styles.Story2Box1}>
                 <Box sx={styles.textBox3}>
-                    <Heading sx={{ fontSize: ["2.2rem", "2.2rem", "2.8rem"], fontWeight: "lighter" }} as='h1'>9 Things You Can Do to Save the Environment</Heading>
+                    <Heading sx={{ fontSize: ["2.2rem", "2.2rem", "2.8rem"], fontWeight: "lighter" }} as='h1'>9 Things You Can Do to Save the Env.</Heading>
                     <Box sx={{ width: "70px", borderBottom: "4px solid #08d019", marginY: "5%" }} />
                     <Paragraph sx={{ fontSize: "1.2rem", fontWeight: "lighter" }}>By no means am I suggesting that I am the next superhero of the environment (although that would make for an excellent Halloween costume). However, I like to believe that many of us, when equipped with information, will do the right thing. Here are the top 9 things you can do to save the planet, with or without a green cape:</Paragraph>
                 </Box>

@@ -34,13 +34,19 @@ const CurrentProject = () => {
         headingMain:{
             textAlign:"center",
             fontFamily:"Merriweather",
-            fontSize: ["2.2rem", "2.2rem", "2.4rem"]
+            fontSize: '2.2rem',
+            '@media (max-width: 200px)': {
+                fontSize: '1.7rem'
+            }
         },
         bottomBorder:{
             width:"25vh", 
             borderBottom: "2px solid #08d019",
             marginY: "2vh",
-            marginX:"auto" 
+            marginX:"auto" ,
+            '@media (max-width: 200px)': {
+                width: "90%"
+            }
         },
         secondHeading:{
             textAlign:"center",
