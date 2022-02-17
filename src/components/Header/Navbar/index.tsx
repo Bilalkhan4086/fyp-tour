@@ -30,7 +30,7 @@ export const NavBar:React.FC<any> = ({offset}) =>{
       <Navbar collapseOnSelect fixed='top' onToggle={()=>{setNavEx(!navEx)}} expand="lg" style={{backgroundColor:green ? 'white' : navEx ? "white" : "transparent"}}>
   <Container>
   <Navbar.Brand href="#">
-  <Progress value={((offset + window.innerHeight) / document.documentElement.scrollHeight)} max={1} style={{position:"absolute",top:"97%",height:"5px",left:"0px",display:green ? "unset" : 'none'}} color="green"/>
+  {typeof window !== `undefined` ? <Progress value={((offset + window.innerHeight) / document.documentElement.scrollHeight)} max={1} style={{position:"absolute",top:"97%",height:"5px",left:"0px",display:green ? "unset" : 'none'}} color="green"/> : ''}
   <img src={green ? logoDark : navEx ? logoBrown : logolight} style={{width: green ? "150px":"150px"}} title="image"/>
   {/* PAKVENTURES */}
   </Navbar.Brand>
