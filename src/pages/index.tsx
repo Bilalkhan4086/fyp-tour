@@ -14,22 +14,24 @@ export default function Home() {
   const [offset, setOffset] = useState<number>(0);
 
   useEffect(() => {
-      const onScroll = () => setOffset(window.pageYOffset);
+  if(typeof window !== undefined){    
+    const onScroll = () => setOffset(window.pageYOffset);
       // clean up code
       window.removeEventListener('scroll', onScroll);
       window.addEventListener('scroll', onScroll, { passive: true });
       return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  
+    }}, []);
 
   return (
   <Box style={{width:"100%"}}>
     <NavBar offset={offset} />
      <Hero />
-    {/* <Stories/> 
-    <SixStroies/> */}
-    {/* <CurrentProject/>
+    <Stories/> 
+    <SixStroies/>
+    <CurrentProject/>
     <SaveTheWorld/>
-    <SaveTheWorld2/> */}
-    {/* <Footer/> */}
+    <SaveTheWorld2/>
+    <Footer/>
   </Box>)
 }
