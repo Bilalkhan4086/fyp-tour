@@ -21,7 +21,6 @@ export default function Home() {
       return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  console.log("red",window.innerHeight ,offset, document.documentElement.scrollHeight);
   return (
   <Box style={{width:"100%"}}>
     <NavBar offset={offset} />
