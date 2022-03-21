@@ -259,7 +259,7 @@ const SaveTheWorld = () => {
 
     }
     return (
-        <Box sx={{ background: `url(${forestImage1})`, backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat" }} >
+        <Box sx={{ background: `url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwMsPMo_5lvXHEWb8oNNogMuHlLtEkT9LtfA&usqp=CAU)`, backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat" }} >
             <Box sx={{ backgroundColor: "rgba(256,256,256,0.5)", padding: "5%" }}>
                 <Box sx={styles.main}>
                     

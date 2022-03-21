@@ -10,7 +10,7 @@ const Index = () => {
     mainHeading:{
       width:"60%",
       fontSize:"3rem",
-      top:"50%",
+      top:"55%",
       fontFamily: 'Asap Condensed',
       position:"absolute",color:"whitesmoke",
             '@media(max-width: 349px)': {
@@ -20,29 +20,34 @@ const Index = () => {
               fontSize:"1.7rem",           
             },
             '@media (min-width: 350px) and (max-width: 423px)': {
-              width:"70%",
-              left:"70px",
-              fontSize:"1.8rem",      
+              width:"280px",
+              left:"40px",
+              fontSize:"1.8rem",    
+              top:"60%",
+
             },
             '@media (min-width: 424px) and (max-width: 561px)': {
-              width:"60%",
-              left:"70px",
+              width:"310px",
+              left:"50px",
+              top:"60%",
               fontSize:"2rem",  
             },
             '@media (min-width: 562px) and (max-width: 637px)': {
-              width:"60%",
-              left:"70px",
+              width:"350px",
+              left:"60px",
+              top:"60%",
               fontSize:"2.2rem", 
             },
             '@media (min-width: 638px) and (max-width: 799px)': {
-              width:"60%",
+              width:"400px",
               left:"70px",
               fontSize:"2.5rem",
             },
             '@media screen and (min-width: 800px)': {
-              width:"60%",
+              width:"500px",
               left:"70px",
               fontSize:"3rem",
+              top:"53%"
             }
     },
     subHeading:{
@@ -84,7 +89,7 @@ const Index = () => {
     }}
     >
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
 <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed&display=swap" rel="stylesheet"/>
     
     <Box sx={styles.mainHeading}>

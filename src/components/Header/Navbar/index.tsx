@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 // import logo from '../../../Images/logo.jpg'
 import logolight from '../../../Images/logo4.png'
 import logoDark from '../../../Images/logo5.png'
-import logoBrown from '../../../Images/logo6.png'
+import logoBrown from '../../../Images/logosvg.js'
 import login from '../../../Images/login.png'
 import {Navbar,Container,Nav,NavDropdown, Modal} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,6 +12,7 @@ import './index3.css';
 import { Avatar, Divider,  Donut,  Progress,  Text } from 'theme-ui';
 import { Button, Box  } from '@material-ui/core';
 import MyVerticallyCenteredModalSignUp from '../../Modal/signup'
+import Logosvg from '../../../Images/logosvg.js';
 
 export const NavBar:React.FC<any> = ({offset}) =>{
   const [navEx,setNavEx] = useState(false);
@@ -19,19 +20,27 @@ export const NavBar:React.FC<any> = ({offset}) =>{
   const [showModal,setShowModal] = useState(false);
   const [Name,setName] = useState("Muhammad Bilal");
   const [green,setGreen] = useState(true);
+  const [logoColor,setLogoColor] = useState('#ffffff');
   useEffect(()=>{
     if(offset <= window.innerHeight){
-    console.log('rendered',window.innerHeight,offset);
     setGreen(false);
+    setLogoColor('#ffffff');
+    if(navEx){
+      setLogoColor('#AD590A')
+    }
   }else{
     setGreen(true);
+    setLogoColor('green')
   }})
     return(
       <Navbar collapseOnSelect fixed='top' onToggle={()=>{setNavEx(!navEx)}} expand="lg" style={{backgroundColor:green ? 'white' : navEx ? "white" : "transparent"}}>
   <Container>
   <Navbar.Brand href="#">
   {typeof window !== `undefined` ? <Progress value={((offset + window.innerHeight) / document.documentElement.scrollHeight)} max={1} style={{position:"absolute",top:"97%",height:"5px",left:"0px",display:green ? "unset" : 'none'}} color="green"/> : ''}
-  <img src={green ? logoDark : navEx ? logoBrown : logolight} style={{width: green ? "150px":"150px"}} title="image"/>
+  {/* <img src={green ? logoDark : navEx ? logoBrown : logolight} style={{width: green ? "150px":"150px"}} title="image"/> */}
+  <Box style={{width:"150px"}}>
+  <Logosvg olor={logoColor}/>
+  </Box>
   {/* PAKVENTURES */}
   </Navbar.Brand>
   <Navbar.Toggle className={green ? "navbar-light" : navEx ? "navbar-light " : "navbar-dark" } />

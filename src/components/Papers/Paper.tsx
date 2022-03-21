@@ -23,11 +23,11 @@ const styles={
     },
     '@media (min-width: 673px) and (max-width: 757px)': {
         width: "300px",
-        height: "370px"
+        height: "410px"
     },
     '@media (min-width: 758px) and (max-width: 800px)': {
         width: "300px",
-        height: "390px"
+        height: "410px"
     },
     '@media (min-width: 801px) and (max-width: 1010px)': {
         width: "320px",

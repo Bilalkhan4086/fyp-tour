@@ -7,11 +7,13 @@ import CurrentProject from "../components/CurrentProjects/CurrentProjects"
 import SaveTheWorld from "../components/SaveTheWorld/SaveTheWorld"
 import SaveTheWorld2 from "../components/SaveTheWorld2/SaveTheWorld2"
 import Footer from "../components/Footer/Footer"
+import Signin from "../components/Modal/signin"
 import { Box } from "theme-ui"
 
 export default function Home() {
   
   const [offset, setOffset] = useState<number>(0);
+  const [showModal, setShowModal] = useState<boolean>(false);
 
   useEffect(() => {
   if(typeof window !== undefined){    
@@ -33,5 +35,11 @@ export default function Home() {
     <SaveTheWorld/>
     <SaveTheWorld2/>
     <Footer/>
-  </Box>)
+     {/* <button  onClick={()=>{setShowModal(true);console.log("show")}}>open me</button>
+          <Signin show={showModal}
+          onHide={()=>{
+            setShowModal(false);          
+            }}/> */}
+          </Box> 
+  )
 }
