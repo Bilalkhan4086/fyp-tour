@@ -10,7 +10,7 @@ const Card2 = ({ hotelName, rating, description, imageUrl, hotelLocation, rooms,
         <Box style={{ width: "750px", color: "whitesmoke", borderRadius: "10px", backgroundColor: "#080130", margin: "20px 0px" }}>
             <Box style={{ display: "flex", justifyContent: "space-around", borderRadius: "10px" }}>
                 {/* left */}
-                <Box style={{ width: "380px", height: "545px", backgroundSize: "800px", backgroundRepeat: "no-repeat", backgroundPosition: "center", borderTopLeftRadius: "10px", borderBottomLeftRadius: "10px", background: `url(${imageUrl ? imageUrl : "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&w=1000&q=80"})` }}>
+                <Box style={{ width: "380px", height: "545px", backgroundSize: "cover", backgroundRepeat: "no-repeat",borderTopLeftRadius: "10px", borderBottomLeftRadius: "10px",backgroundPosition:"center" ,backgroundImage: `url(${imageUrl ? imageUrl : "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&w=1000&q=80"})` }}>
                     <Badge style={{ marginTop: "20px" }} bg="danger">
                         {badge ? badge : "Flash Offer"}
                     </Badge>

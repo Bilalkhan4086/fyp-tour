@@ -10,7 +10,7 @@ import './index.css';
 import './index2.css';
 import './index3.css';
 import { Avatar, Divider,  Donut,  Progress,  Text } from 'theme-ui';
-import { Button, Box  } from '@material-ui/core';
+import { Button, Box, Typography  } from '@material-ui/core';
 import MyVerticallyCenteredModalSignUp from '../../Modal/signup'
 import Logosvg from '../../../Images/logosvg.js';
 
@@ -33,10 +33,10 @@ export const NavBar:React.FC<any> = ({offset}) =>{
     setLogoColor('green')
   }})
     return(
-      <Navbar collapseOnSelect onToggle={()=>{setNavEx(!navEx)}} expand="lg" style={{backgroundColor:green ? 'white' : navEx ? "white" : "transparent"}}>
+      <Navbar collapseOnSelect onToggle={()=>{setNavEx(!navEx)}} expand="lg" style={{backgroundColor:green ? 'transparent' : navEx ? "white" : "transparent"}}>
   <Container>
   <Navbar.Brand href="#">
-  {typeof window !== `undefined` ? <Progress value={((offset + window.innerHeight) / document.documentElement.scrollHeight)} max={1} style={{position:"absolute",top:"97%",height:"5px",left:"0px",display:green ? "unset" : 'none'}} color="green"/> : ''}
+  {/* {typeof window !== `undefined` ? <Progress value={((offset + window.innerHeight) / document.documentElement.scrollHeight)} max={1} style={{position:"absolute",top:"97%",height:"5px",left:"0px",display:green ? "unset" : 'none'}} color="green"/> : ''} */}
   {/* <img src={green ? logoDark : navEx ? logoBrown : logolight} style={{width: green ? "150px":"150px"}} title="image"/> */}
   <Box style={{width:"150px"}}>
   <Logosvg olor={logoColor}/>
@@ -57,9 +57,9 @@ export const NavBar:React.FC<any> = ({offset}) =>{
     <Divider/>
     <Nav >
       <Nav.Link href="#BecomeASeller" style={{display:"flex",justifyContent:"center",margin:"auto"}} >
-      <Button onClick={()=>{setSellerMode(!sellerMode)}} style={{borderRadius:"50px",backgroundColor:green ? "green" : "#ad590a",height:"50px",color:"whitesmoke",fontWeight:'bold'}}>
+      <Typography onClick={()=>{setSellerMode(!sellerMode)}} style={{color:"green",fontWeight:'bolder'}}>
             {sellerMode ? "Back to Buyer" : 'Become a seller'}
-      </Button>
+      </Typography>
       </Nav.Link>
       <Nav.Link style={navEx ? {marginTop:"10%"} : {marginTop:"0px"}} eventKey={2} onClick={()=>{setShowModal(true)}}>
         <Box style={{textAlign:"center",marginTop:"15px"}}>
@@ -67,7 +67,7 @@ export const NavBar:React.FC<any> = ({offset}) =>{
         <Avatar style={{marginTop : navEx ? "-50px":"-10px",width: navEx ? "80px":"45px"}} title="login" src={login}/>
         </Box>
         <Box style={{marginTop : navEx ? "0px":"-5px"}}>
-        <Text style={{fontSize:navEx ? "1.25rem" : "0.75rem",color: green ? "green" : navEx ? "#dd720f" : "whitesmoke"}}>{(!!Name ? Name:'SignIn/SignUp').toUpperCase()}</Text>
+        <Text style={{fontSize:navEx ? "1.25rem" : "0.75rem",fontWeight:"bold",color: green ? "green" : navEx ? "#dd720f" : "whitesmoke"}}>{(!!Name ? Name:'SignIn/SignUp').toUpperCase()}</Text>
         <MyVerticallyCenteredModalSignUp
         show={showModal}
         onHide={()=>{

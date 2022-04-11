@@ -15,7 +15,7 @@ const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:1
     {labels.map((_,i)=>{
 if(Types[i] === 'textArea'){
     return(
-    <TextareaAutosize onChange={(e)=>{seters[i](e.target.value)}} style={{margin:"40px 0px"}} required id="standard-required" placeholder={placeholders[i]} />)
+    <TextareaAutosize onChange={(e)=>{seters[i](e.target.value)}} style={{margin:"40px 0px",height:"50px"}} required id="standard-required" placeholder={placeholders[i]} />)
     }
     else if(Types[i] === 'dateInput'){
     return(
@@ -37,7 +37,7 @@ if(Types[i] === 'textArea'){
     else{
     return(
 
-    <TextField required id="standard-required" onChange={(e)=>{seters[i](e.target.value)}} label={labels[i]} placeholder={placeholders[i]} />
+    <TextField required id="standard-required"  onChange={(e)=>{seters[i](e.target.value)}} label={labels[i]} placeholder={placeholders[i]} />
     )
     }
     })}

@@ -81,7 +81,7 @@ const Index = () => {
 
   return (
     <Box style={{
-      backgroundImage:`url(https://cdn.decoist.com/wp-content/uploads/2017/07/Open-wooden-deck-with-a-hammock-surrounded-by-green-canopy.jpg)`,
+      backgroundImage:`url(https://cdn.pixabay.com/photo/2019/08/07/12/05/city-4390680_960_720.jpg)`,
       height:typeof window !== `undefined` ? window.innerHeight : '100vh',
       backgroundSize:"cover",
       backgroundPosition:"left",

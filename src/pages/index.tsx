@@ -13,7 +13,6 @@ import { Box } from "theme-ui"
 export default function Home() {
   
   const [offset, setOffset] = useState<number>(0);
-  const [showModal, setShowModal] = useState<boolean>(false);
 
   useEffect(() => {
   if(typeof window !== undefined){    
@@ -27,9 +26,9 @@ export default function Home() {
 
   return (
   <Box style={{width:"100%"}}>
-    <NavBar offset={offset} />
-     <Hero />
-    <Stories/> 
+    {/* <NavBar offset={offset} /> */}
+    <Hero />
+   <Stories/> 
     <SixStroies/>
     <CurrentProject/>
     <SaveTheWorld/>

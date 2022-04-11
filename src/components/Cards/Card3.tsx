@@ -11,7 +11,7 @@ const Card3 = ({ hotelName, rating, imageUrl, hotelLocation, rooms, guests, pric
         <Box style={{ width: "300px", color: "whitesmoke", borderRadius: "10px", backgroundColor: "#080130", margin: "20px 0px" }}>
             <Box style={{ borderRadius: "10px" }}>
                 {/* left */}
-                <Box style={{ width: "300px", height: "250px", borderTopLeftRadius: "10px", borderTopRightRadius: "10px", backgroundPosition: "center center", backgroundSize: "500px", background: `url(${imageUrl ? imageUrl : "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&w=1000&q=80"})` }}>
+                <Box style={{ width: "300px", height: "250px", borderTopLeftRadius: "10px", borderTopRightRadius: "10px", backgroundPosition: "center", backgroundSize: "500px", backgroundImage: `url(${imageUrl ? imageUrl : "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&w=1000&q=80"})` }}>
                     <Badge style={{ marginTop: "20px" }} bg="danger">
                         {badge ? badge : "Flash Offer"}
                     </Badge>

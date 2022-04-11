@@ -1,0 +1,44 @@
+.imagediv{
+    position: relative;
+  text-align: center;
+  display: flex;
+  margin: auto;
+  width: 208px;
+  height: 150px;
+  color: white;
+  overflow: hidden;
+}
+
+.buttonToTopRight {
+  visibility: hidden;
+  position: absolute;
+  background-color: rgba(26, 24, 24, 0.753);
+  right: -6%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
+}
+
+.imageContainer{
+width: 208px;
+height: 160px;
+background-color: white;
+border: 1px black dashed;
+border-radius: 2px;
+text-align: center;
+display: flex;
+margin: 10px 0px;
+}
+
+.imageContainer:hover + .buttonToTopRight{
+visibility: visible;
+}
+.imageContainer:hover {
+background-color: rgba(10, 10, 10, 0.1);
+}
+
+.imageContainerDiv{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

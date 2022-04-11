@@ -1,0 +1,8 @@
+.labels{
+    display: unset;
+}
+@media (max-width: 500px)  {
+    .labels{
+        display: none;
+    }
+}

@@ -4,7 +4,8 @@ import { Radio } from 'theme-ui';
 import RadioComponent from '../../components/Radio/Radio';
 import GetDataFromFeilds from '../../components/GetDataFromFeilds/GetDataFromFeilds';
 import CheckBoxComponent from '../../components/CheckBox/CheckBox';
-import UploadGallery from '../../components/UploadGallery/UploadGallery';
+import {UploadGallery} from '../../components/UploadGallery/UploadGallery';
+import "./main.css";
 
 const steps = ['Property Type', 'Property Information', 'Property Facilities', "Property Gallery"];
 const placeholders = ["Enter Your Property Name...","Enter Your Property Address...","Enter Opening Date of Your Property...","Enter Total Number of Rooms of Your Property...",'Enter Description Of Your Property...']
@@ -27,18 +28,7 @@ export default function HorizontalLinearStepper() {
     const [PropertyOpenDate, setPropertyOpenDate] = React.useState(Date());
     const [NoOfRooms, setNoOfRooms] = React.useState(0);
     const [PropertyDescription, setPropertyDescription] = React.useState("");
-    const styles = {
-    labels:{
-    '@media (max-width: 499px)': {
-       display:"none"
-     },
-      '@media screen and (min-width: 500px)': {
-        display:"",
-       color:"red"
-    }
 
-    }
-    }
 
 const seters = [setPropertyName,setPropertyAddress,setPropertyOpenDate,setNoOfRooms,setPropertyDescription]
   const isStepOptional = (step: number) => {
@@ -110,7 +100,7 @@ const seters = [setPropertyName,setPropertyAddress,setPropertyOpenDate,setNoOfRo
 
 
   return (
-    <Box sx={{ width: '80%',display:"flex",justifyContent:"center",margin:"auto", }}>
+    <Box sx={{ width: '80%',margin:"auto", }}>
       <Box>
       <Stepper activeStep={activeStep}>
         {steps.map((label, index) => {
@@ -122,7 +112,7 @@ const seters = [setPropertyName,setPropertyAddress,setPropertyOpenDate,setNoOfRo
           return (
             <Step key={label} {...stepProps}>
               <StepLabel {...labelProps}>
-              <span style={styles.labels}>{label}</span>
+              <span className="labels">{label}</span>
               </StepLabel>
             </Step>
           );
@@ -134,12 +124,15 @@ const seters = [setPropertyName,setPropertyAddress,setPropertyOpenDate,setNoOfRo
         </Box>
       {activeStep === steps.length ? (
         <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>
-            All steps completed - you&apos;re finished
+          <Typography variant="h5" sx={{ mt: 2, mb: 1 }}>
+           You have successfully completed the Hotel Details FORM.<br/>
+           Are you willing to submit it? 
           </Typography>
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-            <Box sx={{ flex: '1 1 auto' }} />
+          
             <Button onClick={handleReset}>Reset</Button>
+          <Box sx={{ flex: '1 1 auto' }} />
+            <Button onClick={handleReset}>Submit</Button>
           </Box>
         </React.Fragment>
       ) : (

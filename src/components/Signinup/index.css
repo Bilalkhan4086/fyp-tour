@@ -1,0 +1,14 @@
+.mainContainer{
+    width:35ch;
+    position: absolute;
+    left:10%;
+}
+
+
+@media (max-width:350px) {
+    .mainContainer{
+        position:unset;
+        left:0px;
+        width: 100%;
+    }
+}
