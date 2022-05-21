@@ -7,10 +7,11 @@
   height: 150px;
   color: white;
   overflow: hidden;
+  z-index: 1;
 }
 
 .buttonToTopRight {
-  visibility: hidden;
+  display: none;
   position: absolute;
   background-color: rgba(26, 24, 24, 0.753);
   right: -6%;
@@ -28,10 +29,11 @@ border-radius: 2px;
 text-align: center;
 display: flex;
 margin: 10px 0px;
+z-index: 999;
 }
 
-.imageContainer:hover + .buttonToTopRight{
-visibility: visible;
+.imageContainer:hover  .buttonToTopRight{
+display: block;
 }
 .imageContainer:hover {
 background-color: rgba(10, 10, 10, 0.1);
@@ -42,3 +44,17 @@ background-color: rgba(10, 10, 10, 0.1);
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
+.imageContainer2{
+  width: 208px;
+  height: 160px;
+  background-color: white;
+  border: 1px black dashed;
+  border-radius: 2px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 7px 7px;
+  align-items: center;
+  z-index: 999;
+  }

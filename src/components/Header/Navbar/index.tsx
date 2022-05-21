@@ -13,11 +13,11 @@ import { Avatar, Divider,  Donut,  Progress,  Text } from 'theme-ui';
 import { Button, Box, Typography  } from '@material-ui/core';
 import MyVerticallyCenteredModalSignUp from '../../Modal/signup'
 import Logosvg from '../../../Images/logosvg.js';
+import { navigate } from 'gatsby';
 
 export const NavBar:React.FC<any> = ({offset}) =>{
   const [navEx,setNavEx] = useState(false);
   const [sellerMode,setSellerMode] = useState(false);
-  const [showModal,setShowModal] = useState(false);
   const [Name,setName] = useState("Muhammad Bilal");
   const [green,setGreen] = useState(true);
   const [logoColor,setLogoColor] = useState('#ffffff');
@@ -46,12 +46,12 @@ export const NavBar:React.FC<any> = ({offset}) =>{
   <Navbar.Toggle className={green ? "navbar-light" : navEx ? "navbar-light " : "navbar-dark" } />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
-      <Nav.Link href="#" style={{color:green ? "green" : navEx ? "#dd720f" : "whitesmoke"}}>About Us</Nav.Link>
-      <Nav.Link href="#Blogs" style={{color:green ? "green" : navEx ? "#dd720f" : "whitesmoke"}}>Blogs</Nav.Link>
+      <Nav.Link href="#" onClick={()=>{navigate("/")}} style={{color:green ? "green" : navEx ? "#dd720f" : "whitesmoke"}}>About Us</Nav.Link>
+      <Nav.Link href="#Blogs" onClick={()=>{navigate("/")}} style={{color:green ? "green" : navEx ? "#dd720f" : "whitesmoke"}}>Blogs</Nav.Link>
       <NavDropdown title="Home" id={green ? "navTextColor2" : navEx ? "navTextColor3" : "navTextColor"}>
-        <NavDropdown.Item  href="#Stories">Stories</NavDropdown.Item>
-        <NavDropdown.Item href="#Save">Save the World</NavDropdown.Item>
-        <NavDropdown.Item href="#Footer">Footer</NavDropdown.Item>
+        <NavDropdown.Item onClick={()=>{navigate("/#Stories")}}>Stories</NavDropdown.Item>
+        <NavDropdown.Item onClick={()=>{navigate("/#Save")}} >Save the World</NavDropdown.Item>
+        <NavDropdown.Item onClick={()=>{navigate("/#Footer")}}>Footer</NavDropdown.Item>
       </NavDropdown>
     </Nav>
     <Divider/>
@@ -61,20 +61,10 @@ export const NavBar:React.FC<any> = ({offset}) =>{
             {sellerMode ? "Back to Buyer" : 'Become a seller'}
       </Typography>
       </Nav.Link>
-      <Nav.Link style={navEx ? {marginTop:"10%"} : {marginTop:"0px"}} eventKey={2} onClick={()=>{setShowModal(true)}}>
+      <Nav.Link style={navEx ? {marginTop:"10%"} : {marginTop:"0px"}} eventKey={2} onClick={()=>{navigate("/profile")}}>
         <Box style={{textAlign:"center",marginTop:"15px"}}>
         <Box>
         <Avatar style={{marginTop : navEx ? "-50px":"-10px",width: navEx ? "80px":"45px"}} title="login" src={login}/>
-        </Box>
-        <Box style={{marginTop : navEx ? "0px":"-5px"}}>
-        <Text style={{fontSize:navEx ? "1.25rem" : "0.75rem",fontWeight:"bold",color: green ? "green" : navEx ? "#dd720f" : "whitesmoke"}}>{(!!Name ? Name:'SignIn/SignUp').toUpperCase()}</Text>
-        <MyVerticallyCenteredModalSignUp
-        show={showModal}
-        onHide={()=>{
-          setShowModal(false);
-        }
-          }
-      />
         </Box>
         </Box>
       </Nav.Link>

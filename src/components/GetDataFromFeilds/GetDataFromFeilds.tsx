@@ -34,11 +34,17 @@ if(Types[i] === 'textArea'){
         />
         </MuiPickersUtilsProvider>
 )}
-    else{
+    else if(Types[i] === 'textFeild'){
     return(
 
     <TextField required id="standard-required"  onChange={(e)=>{seters[i](e.target.value)}} label={labels[i]} placeholder={placeholders[i]} />
     )
+    }
+    else{
+      return(
+
+        <TextField required id="standard-required" type="number" onChange={(e)=>{seters[i](e.target.value)}} label={labels[i]} placeholder={placeholders[i]} />
+        ) 
     }
     })}
     

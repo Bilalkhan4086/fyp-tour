@@ -4,17 +4,16 @@ import { Radio } from 'theme-ui';
 import RadioComponent from '../../components/Radio/Radio';
 import GetDataFromFeilds from '../../components/GetDataFromFeilds/GetDataFromFeilds';
 import CheckBoxComponent from '../../components/CheckBox/CheckBox';
-import {UploadGallery} from '../../components/UploadGallery/UploadGallery';
-import "../../components/css/main.css";
+import UploadCinc from '../../components/UploadGallery/UploadCnic';
+import "../css/main.css";
 import {navigate} from 'gatsby'
 
-const steps = ['Property Type', 'Property Information', 'Property Facilities', "Property Gallery"];
-const placeholders = ["Enter Your Property Name...","Enter Your Property Address...","Enter Opening Date of Your Property...","Enter Total Number of Rooms of Your Property...",'Enter Description Of Your Property...']
-const getInfolabels = ["Property Name","Property Address","Opening Date","Number of Rooms",'Description']
-const Types = ["textFeild","textFeild","dateInput","numbered",'textArea']
+const steps = ['Personal Information', "Required Gallery"];
+const placeholders = ["Enter Your Full Name...","Enter Your Email Address...","Enter the Phone Number...",'Enter Your Mobile Number...','Enter your house address','Enter the CINC Number...','Enter Your Occupation...','Enter your website you can also use facebook profile link...','Enter you instagram id...','Enter you facebook id...','Enter you Twitter id...']
+const getInfolabels = ["FullName","Email Address","Phone Number","Moblie Number",'Website Link','Instagram ID','Twitter ID','Facebook ID']
+const Types = ["textFeild","textFeild","textFeild",'textFeild',"textFeild","textFeild","textFeild","textFeild"]
 
-
-export default function HorizontalLinearStepper() {
+const CreateProfile = () => {
     const [activeStep, setActiveStep] = React.useState(0);
     const [PropertyType, setPropertyType] = React.useState("Hotel");
     const [services, setServices] = React.useState({
@@ -70,37 +69,26 @@ const seters = [setPropertyName,setPropertyAddress,setPropertyOpenDate,setNoOfRo
     });
   };
 
-  const handleReset = () => {
-    setActiveStep(0);
+  const handleAddDetails = () => {
+    navigate("/profile")
   };
 
   
   const handleSubmit = () => {
-    navigate("/manager/Addrooms")
+    navigate("/manager/dashboard")
   };
 
   const content = () =>{
-    const notes = ["Standardized service and decoration, some provide facilities such as resturants and meeting room, etc","Mostly Operated by families and indiviual residents and their dwellings.","Usually the detached houses, possible to rent as whole, some provide housekeeper services."]
-    // const PropertyFacilitiesNotes = ["Standardized service and decoration, some provide facilities such as resturants and meeting room, etc","Mostly Operated by families and indiviual residents and their dwellings.","Usually the detached houses, possible to rent as whole, some provide housekeeper services."]
-    const labels = ["Hotel","Home","Villa"];
-    const PropertyFacilitiesLabels = ["Breakfast","Lunch","Dinner","WarmWater"]
-      if(activeStep === 0){
-        return(<RadioComponent propertyType={PropertyType} titleHeading="Select your property type" labels={labels} notes={notes} setPropertyType={setPropertyType}/>)
-      }
+    if(activeStep === 0){
+        return(<Box>
+          <GetDataFromFeilds placeholders = {placeholders} labels = {getInfolabels} seters={seters} Types={Types}/>
+          </Box>)}
       else if(activeStep === 1){
-        return(<Box>
-        <GetDataFromFeilds placeholders = {placeholders} labels = {getInfolabels} seters={seters} Types={Types}/>
-        </Box>)
-      }
-      else if(activeStep === 2){
-        return(<Box>
-        <CheckBoxComponent notes={notes} services={PropertyFacilitiesLabels} setServices={setServices} titleHeading="Select the facilities(services) you will provide"/>
-        </Box>)
-      }
-      else if(activeStep === 3){
-        return(<Box>
-     <UploadGallery hotel={true}/>   
-        </Box>)
+        return(
+          <Box>
+            <UploadCinc/>
+          </Box>
+        )
       }
   }
 
@@ -131,14 +119,14 @@ const seters = [setPropertyName,setPropertyAddress,setPropertyOpenDate,setNoOfRo
       {activeStep === steps.length ? (
         <React.Fragment>
           <Typography variant="h5" sx={{ mt: 2, mb: 1 }}>
-           You have successfully completed the Hotel Details FORM.<br/>
+           You have successfully completed the Room 1 Details.<br/>
            Are you willing to submit it? 
           </Typography>
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
           
-            <Button color="secondary" variant='outlined' onClick={handleReset}>Reset</Button>
+          <Button color="primary" variant='outlined' onClick={handleSubmit}>Submit</Button>
           <Box sx={{ flex: '1 1 auto' }} />
-            <Button color="primary" variant='outlined' onClick={handleSubmit}>Submit and Add Rooms</Button>
+            <Button color="secondary" variant='outlined' onClick={handleAddDetails}> Veiw Profile</Button>
           </Box>
         </React.Fragment>
       ) : (
@@ -149,7 +137,7 @@ const seters = [setPropertyName,setPropertyAddress,setPropertyOpenDate,setNoOfRo
             </Button>
             <Box sx={{ flex: '1 1 auto' }} />
             
-            <Button variant="outlined" color="primary" onClick={handleNext}>
+            <Button color="primary" variant='outlined' onClick={handleNext}>
               {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
             </Button>
           </Box>
@@ -159,3 +147,5 @@ const seters = [setPropertyName,setPropertyAddress,setPropertyOpenDate,setNoOfRo
     </Box>
   );
 }
+
+export default CreateProfile

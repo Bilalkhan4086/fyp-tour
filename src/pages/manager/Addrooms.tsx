@@ -8,13 +8,12 @@ import {UploadGallery} from '../../components/UploadGallery/UploadGallery';
 import "../../components/css/main.css";
 import {navigate} from 'gatsby'
 
-const steps = ['Property Type', 'Property Information', 'Property Facilities', "Property Gallery"];
-const placeholders = ["Enter Your Property Name...","Enter Your Property Address...","Enter Opening Date of Your Property...","Enter Total Number of Rooms of Your Property...",'Enter Description Of Your Property...']
-const getInfolabels = ["Property Name","Property Address","Opening Date","Number of Rooms",'Description']
-const Types = ["textFeild","textFeild","dateInput","numbered",'textArea']
+const steps = ['Room Type', 'Room Information', 'Room Facilities', "Room Gallery"];
+const placeholders = ["Enter Your Room Name...","Enter Your Room Address...","Enter the Room Number here...",'Enter Description Of Your Property...']
+const getInfolabels = ["Room Name","Room Address","Room Number",'Description']
+const Types = ["textFeild","textFeild","numbered",'textArea']
 
-
-export default function HorizontalLinearStepper() {
+const Addrooms = () => {
     const [activeStep, setActiveStep] = React.useState(0);
     const [PropertyType, setPropertyType] = React.useState("Hotel");
     const [services, setServices] = React.useState({
@@ -70,19 +69,19 @@ const seters = [setPropertyName,setPropertyAddress,setPropertyOpenDate,setNoOfRo
     });
   };
 
-  const handleReset = () => {
+  const handleAddRooms = () => {
     setActiveStep(0);
   };
 
   
   const handleSubmit = () => {
-    navigate("/manager/Addrooms")
+    navigate("/manager/dashboard")
   };
 
   const content = () =>{
-    const notes = ["Standardized service and decoration, some provide facilities such as resturants and meeting room, etc","Mostly Operated by families and indiviual residents and their dwellings.","Usually the detached houses, possible to rent as whole, some provide housekeeper services."]
+    const notes = ["Standardized service with furnished and decorated, provides facilities such as Flowered bed Rooms etc","Mostly Operated by hotels, resturents and villas with ceiling, tiled floor, good-furniture, fregnance and etc.","Mostly Operated by small hotels and homes without ceiling, tiled floor, good furniture and etc."]
     // const PropertyFacilitiesNotes = ["Standardized service and decoration, some provide facilities such as resturants and meeting room, etc","Mostly Operated by families and indiviual residents and their dwellings.","Usually the detached houses, possible to rent as whole, some provide housekeeper services."]
-    const labels = ["Hotel","Home","Villa"];
+    const labels = ["Ultra-VIP","Furnished","Non-Furnished"];
     const PropertyFacilitiesLabels = ["Breakfast","Lunch","Dinner","WarmWater"]
       if(activeStep === 0){
         return(<RadioComponent propertyType={PropertyType} titleHeading="Select your property type" labels={labels} notes={notes} setPropertyType={setPropertyType}/>)
@@ -99,7 +98,7 @@ const seters = [setPropertyName,setPropertyAddress,setPropertyOpenDate,setNoOfRo
       }
       else if(activeStep === 3){
         return(<Box>
-     <UploadGallery hotel={true}/>   
+     <UploadGallery hotel={false}/>   
         </Box>)
       }
   }
@@ -131,14 +130,14 @@ const seters = [setPropertyName,setPropertyAddress,setPropertyOpenDate,setNoOfRo
       {activeStep === steps.length ? (
         <React.Fragment>
           <Typography variant="h5" sx={{ mt: 2, mb: 1 }}>
-           You have successfully completed the Hotel Details FORM.<br/>
+           You have successfully completed the Room 1 Details.<br/>
            Are you willing to submit it? 
           </Typography>
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
           
-            <Button color="secondary" variant='outlined' onClick={handleReset}>Reset</Button>
+            <Button color="primary" variant='outlined' onClick={handleSubmit}>Submit</Button>
           <Box sx={{ flex: '1 1 auto' }} />
-            <Button color="primary" variant='outlined' onClick={handleSubmit}>Submit and Add Rooms</Button>
+            <Button color="secondary" variant='outlined' onClick={handleAddRooms}>Add Rooms</Button>
           </Box>
         </React.Fragment>
       ) : (
@@ -159,3 +158,5 @@ const seters = [setPropertyName,setPropertyAddress,setPropertyOpenDate,setNoOfRo
     </Box>
   );
 }
+
+export default Addrooms

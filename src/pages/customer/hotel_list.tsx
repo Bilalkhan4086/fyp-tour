@@ -8,6 +8,7 @@ import imgs4 from '../../Images/Nature2.jpg'
 import imgs5 from '../../Images/Nature3.jpg'
 import imgs6 from '../../Images/StoryImage4.jpg'
 import HotelListCards from './../../components/HotelListCards/HotelListCards'
+import SearchBar from "../../components/SearchBar/SearchBar"
 
 const hotelList = [
     {images:imgs1,hotelName:"Gulshan-e-jabber",rating:3.5,description:"Its very beautiful and loving hotel. Most of the time professional meeting are being held in it."},
@@ -33,6 +34,10 @@ const hotel_list = () => {
       These are the best hotels against your search
     </Typography>
     
+<Box style={{marginTop:"5%"}}>
+<SearchBar/>
+</Box>
+
     <Box sx={styles.mainBox}>
             <Box style={{display:"flex",flexWrap:"wrap",justifyContent:"space-around"}}>
 {

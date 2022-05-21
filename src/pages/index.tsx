@@ -9,6 +9,7 @@ import SaveTheWorld2 from "../components/SaveTheWorld2/SaveTheWorld2"
 import Footer from "../components/Footer/Footer"
 import Signin from "../components/Modal/signin"
 import { Box } from "theme-ui"
+import SearchBar from "../components/SearchBar/SearchBar"
 
 export default function Home() {
   
@@ -28,17 +29,15 @@ export default function Home() {
   <Box style={{width:"100%"}}>
     {/* <NavBar offset={offset} /> */}
     <Hero />
+    <Box style={{marginTop:"-100px"}}>
+    <SearchBar/>
+    </Box>
    <Stories/> 
     <SixStroies/>
     <CurrentProject/>
     <SaveTheWorld/>
     <SaveTheWorld2/>
     <Footer/>
-     {/* <button  onClick={()=>{setShowModal(true);console.log("show")}}>open me</button>
-          <Signin show={showModal}
-          onHide={()=>{
-            setShowModal(false);          
-            }}/> */}
           </Box> 
   )
 }

@@ -4,9 +4,11 @@ import React, { useEffect } from 'react';
 import ImageUploading from 'react-images-uploading';
 import './index.css';
 import imageLogo from '../../Images/imagelogo.png';
+import Bin from '../../Images/icons8-bin-64.png'
+import UploadDocuments from './UploadDocuments';
 
 
-export function UploadGallery() {
+export function UploadGallery({hotel}) {
 
 
   const [images, setImages] = React.useState([]);
@@ -45,7 +47,8 @@ export function UploadGallery() {
           dragProps,
         }) => (
           // write your building UI
-          <div className="upload__image-wrapper imageContainerDiv">
+         <div>
+            <div className="upload__image-wrapper imageContainerDiv">
             {
               arr.map((_, i) => (
                 <Box key={i} className="imageContainer" {...dragProps} style={isDragging ? { color: 'red' } : undefined} >
@@ -59,19 +62,23 @@ export function UploadGallery() {
                         :
                         ""
                       :
-                      <div className="image-item imagediv">
-                        <img src={imageList[i]['data_url']} alt="" className='imageView' width="250" />
+                      <div className="image-item imagediv"  style={{backgroundImage:`url(${imageList[i]['data_url']})`,backgroundPosition:"center",backgroundSize:"cover",backgroundRepeat:"no-repeat"}}>
                         <div className="image-item__btn-wrapper buttonToTopRight">
-                          <DeleteForever style={{ color:"whitesmoke", fontSize: 40, cursor: "pointer" }} onClick={() => onImageRemove(i)}>Remove</DeleteForever>
-                        </div>{console.log("i=", i, "its reding:", imageList[i]['data_url'])}
+                        <img src={Bin} width="40px" style={{ color:"whitesmoke", padding:"5px", cursor: "pointer" }} onClick={() => onImageRemove(0)}/>
+                        </div>
                       </div>
                   }
                 </Box>
               ))
             }
           </div>
-        )
-        }</ImageUploading>
+{ hotel ?
+  <UploadDocuments/> : ''
+}
+         </div>
+                 )
+        }
+        </ImageUploading>
     </div>
   );
 }
